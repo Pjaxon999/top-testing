@@ -37,3 +37,13 @@ describe('capitalize function', () => {
         expect(capitalize("hello world!")).toBe("Hello world!");
     })
 });
+
+// reverse function tests
+describe('reverse string function', () => {
+    it('reverses a string', () => {
+        expect(reverseString("team")).toBe("maet");
+    })
+    it('does not just reverse team', () => {
+        expect(reverseString("meat")).toBe("taem");
+    })
+})
