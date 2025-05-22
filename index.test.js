@@ -46,4 +46,28 @@ describe('reverse string function', () => {
     it('does not just reverse team', () => {
         expect(reverseString("meat")).toBe("taem");
     })
+    it('handles empty strings', () => {
+        expect(reverseString("")).toBe("");
+    })
+    it('handles non string inputs', () => {
+        expect(reverseString(321)).toBe("Strings only please!");
+    })
+    it('handles multi word strings', () => {
+        expect(reverseString("hello world!")).toBe("!dlrow olleh");
+    })
+    it('handles strings with non-alphabetic characters', () => {
+        expect(reverseString("123abc")).toBe("cba321");
+    })
+    it('handles strings with accents', () => {
+        expect(reverseString("café")).toBe("éfac");
+    })
+    it('handles non-english strings', () => {
+        expect(reverseString("こんにちは")).toBe("はちにんこ");
+    })
+    it('handles whitespace', () => {
+        expect(reverseString(" hello ")).toBe(" olleh ");
+    })
+    it('handles palindromes', () => {
+        expect(reverseString("abba")).toBe("abba");
+    })
 })
