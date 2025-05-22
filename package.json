@@ -1,0 +1,26 @@
+{
+  "name": "top-testing",
+  "version": "1.0.0",
+  "description": "TOP project for learning how to write and implement unit tests",
+  "homepage": "https://github.com/Pjaxon999/top-testing#readme",
+  "bugs": {
+    "url": "https://github.com/Pjaxon999/top-testing/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pjaxon999/top-testing.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js",
+    "update" :"git add -A && git commit -a && git push origin main"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
+
