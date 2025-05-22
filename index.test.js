@@ -71,3 +71,46 @@ describe('reverse string function', () => {
         expect(reverseString("abba")).toBe("abba");
     })
 })
+
+// Calculator function tests
+describe('calculator object', () => {
+    it('adds two and two', () => {
+        expect(calculator.add(2, 2)).toBe(4);
+    })
+    it('adds other number pairs', () => {
+        expect(calculator.add(4,4)).toBe(8);
+        expect(calculator.add(3,3)).toBe(6);
+    })
+    it('subtracts number pairs', () => {
+        expect(calculator.subtract(2,2)).toBe(0);
+        expect(calculator.subtract(4,2)).toBe(2);
+    })
+    it('divides number pairs', () => {
+        expect(calculator.divide(2,2)).toBe(1);
+        expect(calculator.divide(4,2)).toBe(2);
+    })
+    it('multiplys number pairs', () => {
+        expect(calculator.multiply(2,2)).toBe(4);
+        expect(calculator.multiply(4,4)).toBe(16);
+    })
+    it('handles negative numbers', () => {
+        expect(calculator.add(0, -1)).toBe(-1);
+        expect(calculator.subtract(1, -1)).toBe(2);
+        expect(calculator.multiply(3, -2)).toBe(-6);
+        expect(calculator.divide(-1, -1)).toBe(1);
+    })
+    it('handles divide by 0', () => {
+        // Javascript follows IEEE standards so dividing by 0 should be infinity, and dividing 0 by itself should result in NaN
+        expect(calculator.divide(2, 0)).toBe(Infinity);
+        expect(calculator.divide(0, 0)).toBe(NaN);
+    })
+    it('handles non number inputs', () => {
+        expect(calculator.add (2, "two")).toBe("numbers only!");
+        expect(calculator.subtract("3", "one")).toBe("numbers only!");
+        expect(calculator.divide("zero", 1)).toBe("numbers only!");
+    })
+    it('handles floating point number nonsense', () => {
+        // Look it's not Javascripts fault that this happens ok it is the IEEE standards
+        expect(calculator.add(0.1, 0.2)).toBe(0.30000000000000004);
+    })
+})
