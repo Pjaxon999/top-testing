@@ -4,3 +4,10 @@ import calculator from './functions/calculator';
 import caesarCipher from './functions/caesarCipher';
 import analyzeArray from './functions/analyzeArray';
 
+export {
+    capitalize,
+    reverseString,
+    calculator,
+    caesarCipher,
+    analyzeArray
+};
