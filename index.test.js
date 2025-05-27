@@ -136,3 +136,30 @@ describe('Caesar cipher function', () => {
         expect(caesarCipher('abc', -3)).toBe("xyz");
     })
 })
+
+// analyze array tests
+describe('Analyze array function', () => {
+    it('returns an object containing the average, min, max, and length of an array of numbers', () => {
+        expect(analyzeArray([1,8,3,4,2,6])).toStrictEqual({average: 4, min: 1, max: 8, length: 6})
+    })
+    it('does not just return the same numbers every time', () => {
+        expect(analyzeArray([1,2,3,4,5,6])).toStrictEqual({average: 3.5, min: 1, max: 6, length: 6})
+    })
+    it('handles negative numbers', () => {
+        expect(analyzeArray([1, -3, 6, 5, 4, 11])).toStrictEqual({average: 4, min: -3, max: 11, length: 6})
+    })
+    it('handles non-integer averages', () => {
+        expect(analyzeArray([1, 2, 3, 4])).toStrictEqual({average: 2.5, min: 1, max: 4, length: 4})
+    })
+    it('handles empty arrays', () => {
+        expect(analyzeArray([])).toStrictEqual(null)
+    })
+    it('handles single element arrays', () => {
+        expect(analyzeArray([42])).toStrictEqual({ average: 42, min: 42, max: 42, length: 1})
+    })
+    it('returns null for non-array inputs', () => {
+      expect(analyzeArray(null)).toBeNull();
+      expect(analyzeArray("string")).toBeNull();
+      expect(analyzeArray(42)).toBeNull();
+    });
+})
