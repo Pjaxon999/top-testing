@@ -123,4 +123,16 @@ describe('Caesar cipher function', () => {
     it('also returns correct answer from shift of 5', () => {
         expect(caesarCipher("abc", 5)).toBe("fgh");
     })
+    it('handles wrapping from z to a', () => {
+        expect(caesarCipher('xyz', 3)).toBe("abc");
+    })
+    it('handles case preservation even though the original Caesar Ciphers did not but let us not dwell on this', () => {
+        expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
+    })
+    it('handles punctuation even though again the original ciphers did not either :x', () => {
+        expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+    })
+    it('handles negative shift factors', () => {
+        expect(caesarCipher('abc', -3)).toBe("xyz");
+    })
 })
