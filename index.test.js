@@ -114,3 +114,13 @@ describe('calculator object', () => {
         expect(calculator.add(0.1, 0.2)).toBe(0.30000000000000004);
     })
 })
+
+// Caesar cipher tests
+describe('Caesar cipher function', () => {
+    it('returns correct answer from a shift of 3', () => {
+        expect(caesarCipher("abc", 3)).toBe("def");
+    })
+    it('also returns correct answer from shift of 5', () => {
+        expect(caesarCipher("abc", 5)).toBe("fgh");
+    })
+})
